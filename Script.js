@@ -1403,7 +1403,7 @@ async function addBot(botAmount) {
               return person.name !== modifiedName;
             });
           }
-          if (params.get('private-mode') !== "true") { socket.send(`42[11,"${playerId}","- BOT KING"]`); }
+          if (params.get('private-mode') !== "true") { socket.send(`42[11,"${playerId}","[ BOT KING ]"]`); }
           updateUserList(data[5]);
           iziToast.info({
             position: 'topRight',
@@ -1574,7 +1574,7 @@ async function addBot(botAmount) {
                 return;
               }
 
-              socket.send(`42[11,"${playerId}","- BOT KING"]`);
+              socket.send(`42[11,"${playerId}","[ BOT KING ]"]`);
             }
             if (data[2].startsWith("!pp")) {
               const playerNick = data[2].toLowerCase().split(" ").slice(1).join(" ");
@@ -1690,7 +1690,7 @@ btn2.addEventListener("click", function () {
     warningMessage = false;
     socketList.forEach(function (socket) {
       if (socket.readyState === WebSocket.OPEN) {
-        if (params.get('private-mode') === "true") { socket.send(`42[11,"${socket.playerId}","- BOT KING"]`); }
+        if (params.get('private-mode') === "true") { socket.send(`42[11,"${socket.playerId}","[ BOT KING ] "]`); }
         socket.close();
         socket.onerror = null;
         socket.onclose = null;
@@ -2132,7 +2132,7 @@ function startSpamIntervalId() {
         let modifiedMessage;
 
         if (Math.random() < 0.1) {
-          modifiedMessage = "- BOT KING";
+          modifiedMessage = "[ BOT KING ]";
         } else {
           modifiedMessage = spamtext.slice(0, randomIndex) + '឵' + spamtext.slice(randomIndex);
         }
